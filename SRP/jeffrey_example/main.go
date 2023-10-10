@@ -1,15 +1,15 @@
 package main
 
 import (
+	"github.com/SOLID/SRP/jeffrey_example/salesReporter"
 	"time"
-
-	"github.com/SOLID/SRP/jeffrey_example/repo"
 )
 
 func main() {
-	start := time.Now().AddDate(0, 0, 10)
+	start := time.Now().AddDate(0, 0, -10)
 	end := time.Now()
+	c := salesReporter.NewConsoleOutput()
 
-	repo.GetTotalSales(nil, start, end)
+	salesReporter.Report(start, end, c)
 
 }
